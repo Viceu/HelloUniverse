@@ -4,7 +4,9 @@ import { ImageBackground, StyleSheet } from "react-native"
 
 function WelcomeScreen(props) {
     return (
-        <ImageBackground source = {require("../assets/background.jpg")}>
+        <ImageBackground 
+        styles = {styles.background}
+        source = {require("../assets/background.jpg")}>
 
         </ImageBackground>
     );
@@ -13,7 +15,9 @@ function WelcomeScreen(props) {
 //React Native Style Sheet
 const styles = StyleSheet.create({
     //key-value pairs inside the object  :3
-
+    background: {
+    flex: 1, // Image background takes up the entire screen 
+    }
 })
 
 export default WelcomeScreen;
