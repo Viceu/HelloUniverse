@@ -1,16 +1,21 @@
 import React from 'react';
-import { ImageBackground, Button, StyleSheet, View } from "react-native";
+import { ImageBackground, Button, Image, StyleSheet, View } from "react-native";
 
 
 export default function WelcomeScreen( {navigation} ) {
     return (
         <View style = {styles.container}>
+            <Image 
+            source={require('../assets/cat_astronaut.png')}
+            style={{width: 300, height: 300}} />
             <Button
-                title = "Curriculum"
+                title = "let's learn!"
+                color="#fff"
                 onPress ={() => navigation.navigate("Curriculum", { content: "curriculum"})}
             />
             <Button
-                title = "Library"
+                title = "library"
+                color="#fff"
                 onPress ={() => navigation.navigate("Library", { content: "Library"})}
             />
         </View>
@@ -26,5 +31,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     }
+
     
 })
