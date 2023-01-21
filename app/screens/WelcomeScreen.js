@@ -1,13 +1,13 @@
 import React from 'react';
-import { ImageBackground, StyleSheet } from "react-native"
+import { ImageBackground, StyleSheet, View } from "react-native";
 
 
-function WelcomeScreen(props) {
+export default function WelcomeScreen( {navigation} ) {
     return (
         <ImageBackground 
         styles = {styles.background}
-        source = {require("../assets/background.jpg")}>
-
+        source = {require("../assets/background.png")}
+        >
         </ImageBackground>
     );
 }
@@ -16,8 +16,8 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
     //key-value pairs inside the object  :3
     background: {
-    flex: 1, // Image background takes up the entire screen 
+    flex: 1 // Image background takes up the entire screen 
     }
 })
 
-export default WelcomeScreen;
+// export default WelcomeScreen;
