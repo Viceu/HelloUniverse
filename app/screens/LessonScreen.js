@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image} from "react-native";
+import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, TouchableOpacity} from "react-native";
 
 export default function LessonScreen( {navigation} ) {
     return (
@@ -16,35 +16,40 @@ export default function LessonScreen( {navigation} ) {
                     onPress={() => Alert.alert('Back')} // should navigate to milstone screen
             />
         </View>
-        <Text style={styles.label}>
+        <Image source={require("../assets/cat_astronaut2.png")} style={styles.mascot} />
+        <Text style={styles.prevpage}>
             Milestone 1
         </Text>
         <Text style={styles.question}>
             Which of the following is an example of a computer?        </Text>
         <Image source={require("../assets/laptop.png")} style={styles.img} />
         <View style={styles.space}>
-            <Button
-                title="Tree"
-                onPress={() => Alert.alert('Incorrect :(')} 
-            />
+        <TouchableOpacity 
+                style={styles.choices}
+                onPress={() => Alert.alert('Incorrect :(')}>
+                <Text style={styles.label}>Tree</Text>
+            </TouchableOpacity>
         </View>
         <View style={styles.space}>
-            <Button
-                title="Laptop"
-                onPress={() => Alert.alert('Correct!')}
-            />
+        <TouchableOpacity 
+                style={styles.choices}
+                onPress={() => Alert.alert('Correct!')}>
+                <Text style={styles.label}>Laptop</Text>
+            </TouchableOpacity>
         </View>
         <View style={styles.space}>
-            <Button
-                title="Water Bottle"
-                onPress={() => Alert.alert('Incorrect :(')}
-            />
+            <TouchableOpacity 
+                style={styles.choices}
+                onPress={() => Alert.alert('Incorrect :(')}>
+                <Text style={styles.label}>Water Bottle</Text>
+            </TouchableOpacity>
         </View>
         <View style={styles.space}>
-            <Button
-                title="Cat"
-                onPress={() => Alert.alert('Incorrect :(')}
-            />
+        <TouchableOpacity 
+                style={styles.choices}
+                onPress={() => Alert.alert('Incorrect :(')}>
+                <Text style={styles.label}>Cat</Text>
+            </TouchableOpacity>
         </View>
     </SafeAreaView>
 
@@ -63,7 +68,7 @@ const styles = StyleSheet.create({
       marginHorizontal: 16,
       color: "#fff",
     },
-    label: {
+    prevpage: {
         position: 'absolute',
         top:0,
         margin: 20,
@@ -72,24 +77,33 @@ const styles = StyleSheet.create({
     question: {
         textAlign: 'left',
         fontWeight: 'bold',
-        marginBottom: 40,
+        marginBottom: 20,
         fontSize: 20,
     },
     title: {
       textAlign: 'center',
       marginVertical: 8,
     },
+    choices: {
+        backgroundColor: '#5CC8FF', 
+        padding: 10, 
+        borderRadius: 50, 
+        height: 60
+    },
+    label: {
+        color: '#000000', 
+        alignSelf: "center", 
+        margin: 5, 
+        fontSize: 18
+    },
     space: {
         marginBottom: 10,
-        borderRadius: 100,
-        height: 50,
-        color: "#5CC8FF",
     },
     img: {
         alignSelf: 'center', 
-        width: 100, 
-        height: 100,
-        marginBottom: 30,
+        width: 140, 
+        height: 140,
+        marginBottom: 20,
     },
     labelimg: {
         width: 20, 
@@ -100,6 +114,13 @@ const styles = StyleSheet.create({
         marginLeft: 5
     },
     back: {
+        width: 30, 
+        height: 30, 
+        marginTop: 15, 
+        position: "absolute", 
+        top: 0
+    },
+    mascot: {
         width: 30, 
         height: 30, 
         marginTop: 15, 
