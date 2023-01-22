@@ -10,7 +10,7 @@ export default function LessonScreen( {navigation} ) {
             resizeMode = {"cover"}
             style={styles.image}>
         
-        <Button style={styles.labelimg} title=" " onPress={() => Alert.alert('Back')} />
+        <Button style={styles.blabelimg} title=" X " onPress={() => navigation.navigate("Milestones")} />
         <Text style={styles.label}>
             Lessons
         </Text>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       backgroundColor: '#fff',
-    //   marginHorizontal: 16,
+      marginVertical: 16,
     },
     label: {
         position: 'absolute',
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     question: {
-        textAlign: 'center',
+        textAlign: 'left',
         fontWeight: 'bold',
         marginBottom: 80,
         fontSize: 20,
@@ -80,6 +80,13 @@ const styles = StyleSheet.create({
     },
     img: {
         alignSelf: 'center', 
+        width: 100, 
+        height: 100,
+        marginBottom: 30,
+    },
+    backbutton: {
+        alignSelf: 'left', 
+        alignSelf: 'up', 
         width: 100, 
         height: 100,
         marginBottom: 30,
