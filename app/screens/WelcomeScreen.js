@@ -19,12 +19,12 @@ export default function WelcomeScreen( {navigation} ) {
             <Button
                 title = "let's learn!"
                 color="#fff"
-                onPress ={() => navigation.navigate("Curriculum", { content: "curriculum"})}
+                onPress ={() => navigation.navigate("LessonScreen")}
             />
             <Button
                 title = "library of character"
                 color="#fff"
-                onPress ={() => navigation.navigate("Library", { content: "Library"})}
+                onPress ={() => navigation.navigate("Library")}
             />
             </ImageBackground>
         </View>
