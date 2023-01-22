@@ -27,7 +27,7 @@ export default function LessonScreen( {navigation} ) {
         <View style={styles.space}>
             <Button style={styles.button}
                 title="Laptop"
-                onPress={() => Alert.alert('Correct!')}
+                onPress={() => navigation.navigate("LoveLace")}
             />
         </View>
         <View style={styles.space}>

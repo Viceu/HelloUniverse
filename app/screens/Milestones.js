@@ -3,40 +3,41 @@ import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, I
 
 export default function Milestones( {navigation, route} ) {
     const localImage = require('../assets/milestones.png');
-    let status = route.params.status;
-    let isCompleted1 = status === "completed" ? True : False ;
-    if (isCompleted1){
-        return (
-            <View style={styles.container}>
-            <ImageBackground 
-                source={localImage} 
-                resizeMode = {"cover"}
-                style={styles.image}>
+    // let status = route.params.status;
+
+    // const isCompleted1 = navigation.getparam('')
+    // if (isCompleted1){
+    //     return (
+    //         <View style={styles.container}>
+    //         <ImageBackground 
+    //             source={localImage} 
+    //             resizeMode = {"cover"}
+    //             style={styles.image}>
             
-            <Button style={styles.blabelimg} title=" X " onPress={() => navigation.navigate("WelcomeScreen")} />
-            <View style={styles.space}>
-                <Button style={styles.button1}
-                    title="Milestone 3"
-                    onPress={() => Alert.alert('Currently Locked!')} 
-                />
-            </View>
-            <View style={styles.space}>
-                <Button style={styles.button}
-                    title="Milestone 2"
-                    onPress={() => Alert.alert('Congrats on Unlocking!')}
-                />
-            </View>
-            <View style={styles.space}>
-                <Button style={styles.button}
-                    title="Milestone 1"
-                    onPress={() => navigation.navigate("LessonScreen")}
-                />
-            </View>
-            </ImageBackground>
-        </View>
+    //         <Button style={styles.blabelimg} title=" X " onPress={() => navigation.navigate("WelcomeScreen")} />
+    //         <View style={styles.space}>
+    //             <Button style={styles.button1}
+    //                 title="Milestone 3"
+    //                 onPress={() => Alert.alert('Currently Locked!')} 
+    //             />
+    //         </View>
+    //         <View style={styles.space}>
+    //             <Button style={styles.button}
+    //                 title="Milestone 2"
+    //                 onPress={() => Alert.alert('Congrats on Unlocking!')}
+    //             />
+    //         </View>
+    //         <View style={styles.space}>
+    //             <Button style={styles.button}
+    //                 title="Milestone 1"
+    //                 onPress={() => navigation.navigate("LessonScreen")}
+    //             />
+    //         </View>
+    //         </ImageBackground>
+    //     </View>
     
-        );
-    }
+    //     );
+    // }
     return (
         <View style={styles.container}>
         <ImageBackground 
