@@ -3,11 +3,12 @@ import { ImageBackground, Button, Image, StyleSheet, View } from "react-native";
 
 
 export default function WelcomeScreen( {navigation} ) {
+    const localImage = require('../assets/background2.png');
     return (
         <View style = {styles.container}>
             <ImageBackground 
-            source={'../assets/background.png'} 
-            resizeMode = "cover"
+            source={localImage} 
+            resizeMode = {"cover"}
             style={styles.image}>
              <Image 
                 source={require('../assets/nametitle.png')}
@@ -45,5 +46,5 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 
-    
+
 })
