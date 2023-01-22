@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, Label} from "react-native";
+import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, TouchableOpacity} from "react-native";
 
 export default function Milestones( {navigation, route} ) {
     const localImage = require('../assets/milestones.png');
@@ -42,27 +42,35 @@ export default function Milestones( {navigation, route} ) {
         <View style={styles.container}>
         <ImageBackground 
             source={localImage} 
-            resizeMode = {"cover"}
             style={styles.image}>
         
-        <Button style={styles.blabelimg} title=" X " onPress={() => navigation.navigate("WelcomeScreen")} />
-        <View style={styles.space}>
-            <Button style={styles.button1}
-                title="Milestone 3"
-                onPress={() => Alert.alert('Currently Locked!')} 
+        <Image source={require("../assets/close.png")} style={styles.labelimg} />
+        <View style={styles.back}>
+            <Button color="rgba(52, 52, 52, 0)"
+                    title=" "
+                    onPress={() => navigation.navigate("WelcomeScreen")}
             />
         </View>
-        <View style={styles.space}>
-            <Button style={styles.button}
-                title="Milestone 2"
-                onPress={() => Alert.alert('Currently Locked!')}
-            />
+        <View style={styles.button3}>
+            <TouchableOpacity 
+                    style={styles.choices}
+                    onPress={() => Alert.alert('Currently Locked!')}>
+                    <Text style={styles.label}>Milestone 3</Text>
+            </TouchableOpacity>
         </View>
-        <View style={styles.space}>
-            <Button style={styles.button}
-                title="Milestone 1"
-                onPress={() => navigation.navigate("LessonScreen")}
-            />
+        <View style={styles.button2}>
+            <TouchableOpacity 
+                    style={styles.choices}
+                    onPress={() => Alert.alert('Currently Locked!')}>
+                    <Text style={styles.label}>Milestone 2</Text>
+            </TouchableOpacity>
+        </View>
+        <View style={styles.button1}>
+            <TouchableOpacity 
+                style={styles.choices}
+                onPress={() => navigation.navigate("LessonScreen")}>
+                <Text style={styles.label}>Milestone 3</Text>
+            </TouchableOpacity>
         </View>
         </ImageBackground>
     </View>
@@ -75,14 +83,12 @@ export default function Milestones( {navigation, route} ) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
       backgroundColor: '#fff',
       marginVertical: 16,
     },
     label: {
-        position: 'absolute',
-        top:0,
-        marginLeft: 20,
+        fontSize: 17,
+        fontWeight: "bold",
     },
     question: {
         textAlign: 'left',
@@ -95,12 +101,31 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginVertical: 8,
     },
-    button1: {
-        alignSelf: 'left', 
-        color: "#5CC8FF"
+    choices: {
+        borderRadius: 50, 
+        height: 40,
+        width: 120,
     },
-    button: {
+    button3: {
+        position: "absolute",
+        top: 290,
+        left: 55,
         color: "#5CC8FF",
+        marginBottom: 10,
+    },
+    button2: {
+        position: "absolute",
+        bottom: 210,
+        right: 22,
+        color: "#5CC8FF",
+        marginBottom: 10,
+    },
+    button1: {
+        position: "absolute",
+        bottom: 30,
+        left: 45,
+        color: "#5CC8FF",
+        marginBottom: 10,
     },
     space: {
         marginBottom: 10,
@@ -111,20 +136,19 @@ const styles = StyleSheet.create({
         height: 100,
         marginBottom: 30,
     },
-    backbutton: {
-        alignSelf: 'left', 
-        alignSelf: 'up', 
-        width: 100, 
-        height: 100,
-        marginBottom: 30,
-    },
     labelimg: {
-        alignSelf: 'left', 
-        width: 20, 
-        height: 20,
+        width: 25, 
+        height: 25,
         position: 'absolute',
-        top:0,
-        background: require("../assets/background.png"),
+        top: 30,
+        left: 25
+    },
+    back: {
+        width: 35, 
+        height: 35, 
+        position: "absolute", 
+        top: 25,
+        left: 20
     },
     image: {
         flex: 1,

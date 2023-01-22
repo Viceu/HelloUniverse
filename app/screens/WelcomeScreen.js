@@ -1,11 +1,11 @@
 import React from 'react';
-import { ImageBackground, Button, Image, StyleSheet, View } from "react-native";
+import { ImageBackground, Button, Image, StyleSheet, View, SafeAreaView} from "react-native";
 
 
 export default function WelcomeScreen( {navigation} ) {
     const localImage = require('../assets/background2.png');
     return (
-        <View style = {styles.container}>
+        <SafeAreaView style = {styles.container}>
             <ImageBackground 
             source={localImage} 
             resizeMode = {"cover"}
@@ -16,18 +16,18 @@ export default function WelcomeScreen( {navigation} ) {
             <Image 
                 source={require('../assets/cat_astronaut.png')}
                 style={{width: 300, height: 300}} />
-            <Button
+            <View style={styles.lesson}>
+            <Button 
                 title = "let's learn!"
-                color="#fff"
                 onPress ={() => navigation.navigate("Milestones")}
             />
-            <Button
+            </View>
+            <Button style={styles.library}
                 title = "library of character"
-                color="#fff"
                 onPress ={() => navigation.navigate("Library")}
             />
             </ImageBackground>
-        </View>
+        </SafeAreaView>
 
     );
 }
@@ -36,7 +36,7 @@ export default function WelcomeScreen( {navigation} ) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#4C698F',
+        // backgroundColor: '#4C698F',
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -45,5 +45,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-
+    lesson: {
+        color: "rgba(39, 8, 160)",
+        marginBottom: 10,
+    }
 })
