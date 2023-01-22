@@ -12,16 +12,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Home"
           component={WelcomeScreen}
           options={{title: 'Welcome'}}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="Curriculum"
           component={CurriculumScreen}
           options={{title: 'Curriculum'}}
-        />
+        /> */}
         <Stack.Screen
           name="Lesson"
           component={LessonScreen}

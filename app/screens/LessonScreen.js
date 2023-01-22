@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, Label} from "react-native";
+import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, TouchableOpacity} from "react-native";
 
 const App = () => (
     <SafeAreaView style={styles.container}>
@@ -8,7 +8,14 @@ const App = () => (
         source = {require("../assets/background.png")}
         >
         </ImageBackground>
-        <Button style={styles.labelimg} title=" " onPress={() => Alert.alert('Back')} />
+        {/* <TouchableOpacity onPress={() => Alert.alert('Back')} >
+            <Image source={require("../assets/laptop.png")} style={styles.labelimg} />
+        </TouchableOpacity> */}
+        <Image source={require("../assets/laptop.png")} style={styles.labelimg} />
+        <Button style={styles.back}
+                title=" "
+                onPress={() => Alert.alert('Back')} 
+        />
         <Text style={styles.label}>
             Lessons
         </Text>
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
     question: {
         textAlign: 'left',
         fontWeight: 'bold',
-        marginBottom: 80,
+        marginBottom: 40,
         fontSize: 20,
     },
     title: {
@@ -82,13 +89,18 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     labelimg: {
-        alignSelf: 'left', 
+        // alignSelf: 'left',
         width: 20, 
         height: 20,
         position: 'absolute',
         top:0,
-        background: require("../assets/background.png"),
     },
+    back: {
+        width: 20, 
+        height: 20,
+        position: 'absolute',
+        top:0,
+    }
   });
   
   export default App;
