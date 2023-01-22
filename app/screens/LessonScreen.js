@@ -8,16 +8,14 @@ const App = () => (
         source = {require("../assets/background.png")}
         >
         </ImageBackground>
-        {/* <Button style={styles.labelimg} title=" " onPress={() => Alert.alert('Back')}>
-            <Image source={require("../assets/laptop.png")} />
-        </Button> */}
+        <Button style={styles.labelimg} title=" " onPress={() => Alert.alert('Back')} />
         <Text style={styles.label}>
             Lessons
         </Text>
-        <Image source={require("../assets/laptop.png")} style={styles.img} />
         <Text style={styles.question}>
             Which of these is used to point at things on the monitor?
         </Text>
+        <Image source={require("../assets/laptop.png")} style={styles.img} />
         <View style={styles.space}>
             <Button style={styles.button}
                 title="Tree"
@@ -89,6 +87,7 @@ const styles = StyleSheet.create({
         height: 20,
         position: 'absolute',
         top:0,
+        background: require("../assets/background.png"),
     },
   });
   
