@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, TouchableOpacity} from "react-native";
+import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image} from "react-native";
 
 export default function LessonScreen( {navigation} ) {
     return (
@@ -9,20 +9,18 @@ export default function LessonScreen( {navigation} ) {
         source = {require("../assets/background.png")}
         >
         </ImageBackground>
-        {/* <TouchableOpacity onPress={() => Alert.alert('Back')} >
-            <Image source={require("../assets/laptop.png")} style={styles.labelimg} />
-        </TouchableOpacity> */}
-        <Image source={require("../assets/laptop.png")} style={styles.labelimg} />
-        <Button style={styles.back}
-                title=" "
-                onPress={() => Alert.alert('Back')} 
-        />
+        <Image source={require("../assets/close.png")} style={styles.labelimg} />
+        <View style={styles.back}>
+            <Button color="rgba(52, 52, 52, 0)"
+                    title=" "
+                    onPress={() => Alert.alert('Back')} // should navigate to milstone screen
+            />
+        </View>
         <Text style={styles.label}>
-            Lessons
+            Milestone 1
         </Text>
         <Text style={styles.question}>
-            Which of these is used to point at things on the monitor?
-        </Text>
+            Which of the following is an example of a computer?        </Text>
         <Image source={require("../assets/laptop.png")} style={styles.img} />
         <View style={styles.space}>
             <Button style={styles.button}
@@ -63,11 +61,13 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       marginHorizontal: 16,
+      color: "#fff",
     },
     label: {
         position: 'absolute',
         top:0,
-        marginLeft: 20,
+        margin: 20,
+        marginLeft: 30,
     },
     question: {
         textAlign: 'left',
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     },
     button: {
         color: "#5CC8FF",
+        borderRadiu: 10,
     },
     space: {
         marginBottom: 10,
@@ -92,17 +93,19 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     labelimg: {
-        // alignSelf: 'left',
         width: 20, 
         height: 20,
         position: 'absolute',
         top:0,
+        marginTop: 20,
+        marginLeft: 5
     },
     back: {
-        width: 20, 
-        height: 20,
-        position: 'absolute',
-        top:0,
+        width: 30, 
+        height: 30, 
+        marginTop: 15, 
+        position: "absolute", 
+        top: 0
     }
   });
   
