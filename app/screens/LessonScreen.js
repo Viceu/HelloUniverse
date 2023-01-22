@@ -23,25 +23,25 @@ export default function LessonScreen( {navigation} ) {
             Which of the following is an example of a computer?        </Text>
         <Image source={require("../assets/laptop.png")} style={styles.img} />
         <View style={styles.space}>
-            <Button style={styles.button}
+            <Button
                 title="Tree"
                 onPress={() => Alert.alert('Incorrect :(')} 
             />
         </View>
         <View style={styles.space}>
-            <Button style={styles.button}
+            <Button
                 title="Laptop"
                 onPress={() => Alert.alert('Correct!')}
             />
         </View>
         <View style={styles.space}>
-            <Button style={styles.button}
+            <Button
                 title="Water Bottle"
                 onPress={() => Alert.alert('Incorrect :(')}
             />
         </View>
         <View style={styles.space}>
-            <Button style={styles.button}
+            <Button
                 title="Cat"
                 onPress={() => Alert.alert('Incorrect :(')}
             />
@@ -79,12 +79,11 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginVertical: 8,
     },
-    button: {
-        color: "#5CC8FF",
-        borderRadiu: 10,
-    },
     space: {
         marginBottom: 10,
+        borderRadius: 100,
+        height: 50,
+        color: "#5CC8FF",
     },
     img: {
         alignSelf: 'center', 
