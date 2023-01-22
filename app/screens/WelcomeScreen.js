@@ -1,31 +1,25 @@
 import React from 'react';
-import { ImageBackground, Button, Image, StyleSheet, View, SafeAreaView} from "react-native";
+import { ImageBackground, Button, Image, StyleSheet, View, SafeAreaView, TouchableOpacity, Text} from "react-native";
 
 
 export default function WelcomeScreen( {navigation} ) {
-    const localImage = require('../assets/background2.png');
+    const localImage = require('../assets/welcomeback.png');
     return (
         <SafeAreaView style = {styles.container}>
             <ImageBackground 
-            source={localImage} 
-            resizeMode = {"cover"}
-            style={styles.image}>
-             <Image 
-                source={require('../assets/nametitle.png')}
-                style={{width: 500, height: 100}} />
-            <Image 
-                source={require('../assets/cat_astronaut.png')}
-                style={{width: 300, height: 300}} />
-            <View style={styles.lesson}>
-            <Button 
-                title = "let's learn!"
-                onPress ={() => navigation.navigate("Milestones")}
-            />
-            </View>
-            <Button style={styles.library}
-                title = "library of character"
-                onPress ={() => navigation.navigate("Library")}
-            />
+                source={localImage} 
+                resizeMode = {"cover"}
+                style={styles.image}>
+                <TouchableOpacity 
+                    style={styles.lesson}
+                    onPress ={() => navigation.navigate("Milestones")}>
+                    <Text style={styles.leslabel}>Let's Go!</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    style={styles.library}
+                    onPress ={() => navigation.navigate("Library")}>
+                    <Text style={styles.liblabel}>Visit Library</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </SafeAreaView>
 
@@ -36,17 +30,47 @@ export default function WelcomeScreen( {navigation} ) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: '#4C698F',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        width: '100%'
     },
     image: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%'
     },
     lesson: {
-        color: "rgba(39, 8, 160)",
-        marginBottom: 10,
+        backgroundColor: '#2708A0', 
+        padding: 10, 
+        borderRadius: 50, 
+        height: 60,
+        width: 300,
+        position: "absolute",
+        bottom: 150,
+        elevation: 2
+    },
+    library: {
+        backgroundColor: '#fff', 
+        padding: 10, 
+        borderRadius: 50, 
+        height: 60,
+        width: 300,
+        position: "absolute",
+        bottom: 85,
+        elevation: 2
+    },
+    leslabel: {
+        color: '#fff', 
+        alignSelf: "center", 
+        margin: 5, 
+        fontSize: 18,
+        fontWeight: "bold"
+    },
+    liblabel: {
+        color: '#000000', 
+        alignSelf: "center", 
+        margin: 5, 
+        fontSize: 18,
+        fontWeight: "bold"
     }
 })

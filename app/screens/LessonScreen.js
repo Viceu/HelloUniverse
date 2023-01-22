@@ -57,8 +57,8 @@ export default function LessonScreen( {navigation} ) {
             </TouchableOpacity>
         </View>
         <View style={styles.footer}>
-            {isCorrect && navigation.navigate("Milestones")}
             {isWrong && <Text style={styles.response}>Incorrect, try again!</Text>}
+            {isCorrect && navigation.navigate("LoveLace")}
         </View>
     </SafeAreaView>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Button, Image, StyleSheet, View } from "react-native";
+import { ImageBackground, Button, Image, StyleSheet, View, TouchableOpacity, Text } from "react-native";
 
 
 export default function LoveLave( {navigation} ) {
@@ -10,16 +10,16 @@ export default function LoveLave( {navigation} ) {
             source={localImage} 
             resizeMode = {"cover"}
             style={styles.image}>
-            <Button
-                title = "Next Milestone!"
-                color="#fff"
-                onPress ={() => navigation.navigate("Milestones", { status: "completed"})}
-            />
-            <Button
-                title = "Go to Library"
-                color="#fff"
-                onPress ={() => navigation.navigate("Library", { status: "completed"})}
-            />
+            <TouchableOpacity 
+                    style={styles.lesson}
+                    onPress ={() => navigation.navigate("Milestones")}>
+                    <Text style={styles.leslabel}>Next Milestone</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    style={styles.library}
+                    onPress ={() => navigation.navigate("Library")}>
+                    <Text style={styles.liblabel}>Go to Library</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
 
@@ -36,8 +36,42 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%'
     },
+    lesson: {
+        backgroundColor: '#2708A0', 
+        padding: 10, 
+        borderRadius: 50, 
+        height: 65,
+        width: 230,
+        position: "absolute",
+        bottom: 175,
+        elevation: 2
+    },
+    library: {
+        backgroundColor: '#fff', 
+        padding: 10, 
+        borderRadius: 50, 
+        height: 65,
+        width: 230,
+        position: "absolute",
+        bottom: 100,
+        elevation: 2
+    },
+    leslabel: {
+        color: '#fff', 
+        alignSelf: "center", 
+        margin: 5, 
+        fontSize: 18,
+        fontWeight: "bold"
+    },
+    liblabel: {
+        color: '#000000', 
+        alignSelf: "center", 
+        margin: 5, 
+        fontSize: 18,
+        fontWeight: "bold"
+    }
 
 })

@@ -41,9 +41,9 @@ export default function Milestones( {navigation, route} ) {
     return (
         <View style={styles.container}>
         <ImageBackground 
-            source={localImage} 
+            source={localImage}
+            resizeMode = {"cover"} 
             style={styles.image}>
-        
         <Image source={require("../assets/close.png")} style={styles.labelimg} />
         <View style={styles.back}>
             <Button color="rgba(52, 52, 52, 0)"
@@ -69,7 +69,7 @@ export default function Milestones( {navigation, route} ) {
             <TouchableOpacity 
                 style={styles.choices}
                 onPress={() => navigation.navigate("LessonScreen")}>
-                <Text style={styles.label}>Milestone 3</Text>
+                <Text style={styles.label}>Milestone 1</Text>
             </TouchableOpacity>
         </View>
         </ImageBackground>
@@ -130,11 +130,11 @@ const styles = StyleSheet.create({
     space: {
         marginBottom: 10,
     },
-    img: {
-        alignSelf: 'center', 
-        width: 100, 
-        height: 100,
-        marginBottom: 30,
+    image: {
+        flex: 1,
+        alignItems: 'center',
+        width: '100%',
+        height: "100%"
     },
     labelimg: {
         width: 25, 
