@@ -15,6 +15,11 @@ export default function App() {
           component={WelcomeScreen}
           options={{title: 'Welcome'}}
         />
+        <Stack.Screen
+          name="Curriculum"
+          component={WelcomeScreen}
+          options={{title: 'Welcome'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
