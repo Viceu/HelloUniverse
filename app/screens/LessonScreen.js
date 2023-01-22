@@ -1,8 +1,9 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, TouchableOpacity} from "react-native";
 
-const App = () => (
-    <SafeAreaView style={styles.container}>
+export default function LessonScreen( {navigation} ) {
+    return (
+        <SafeAreaView style={styles.container}>
         <ImageBackground 
         styles = {styles.background}
         source = {require("../assets/background.png")}
@@ -48,7 +49,9 @@ const App = () => (
             />
         </View>
     </SafeAreaView>
-);
+
+    );
+}
 
 //React Native Style Sheet
 const styles = StyleSheet.create({
@@ -103,4 +106,3 @@ const styles = StyleSheet.create({
     }
   });
   
-  export default App;

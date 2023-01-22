@@ -23,7 +23,7 @@ export default function App() {
           options={{title: 'Curriculum'}}
         /> */}
         <Stack.Screen
-          name="Lesson"
+          name="LessonScreen"
           component={LessonScreen}
           options={{title: 'Time to Learn!'}}
         />
