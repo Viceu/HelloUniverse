@@ -1,7 +1,10 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, TouchableOpacity} from "react-native";
+import { useState } from "react";
 
 export default function LessonScreen( {navigation} ) {
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [isWrong, setIsWrong] = useState(false);
     return (
         <SafeAreaView style={styles.container}>
         <ImageBackground 
@@ -26,30 +29,36 @@ export default function LessonScreen( {navigation} ) {
         <View style={styles.space}>
         <TouchableOpacity 
                 style={styles.choices}
-                onPress={() => Alert.alert('Incorrect :(')}>
+                onPress={() => setIsWrong(!isWrong)}>
                 <Text style={styles.label}>Tree</Text>
             </TouchableOpacity>
         </View>
+        
         <View style={styles.space}>
-        <TouchableOpacity 
-                style={styles.choices}
-                onPress={() => Alert.alert('Correct!')}>
-                <Text style={styles.label}>Laptop</Text>
-            </TouchableOpacity>
+                <TouchableOpacity 
+                    style={styles.choices}
+                    onPress={() => setIsCorrect(!isCorrect)}>
+                    <Text style={styles.label}>Laptop</Text>
+                </TouchableOpacity>
         </View>
+
         <View style={styles.space}>
             <TouchableOpacity 
                 style={styles.choices}
-                onPress={() => Alert.alert('Incorrect :(')}>
+                onPress={() => setIsWrong(!isWrong)}>
                 <Text style={styles.label}>Water Bottle</Text>
             </TouchableOpacity>
         </View>
         <View style={styles.space}>
         <TouchableOpacity 
                 style={styles.choices}
-                onPress={() => Alert.alert('Incorrect :(')}>
+                onPress={() => setIsWrong(!isWrong)}>
                 <Text style={styles.label}>Cat</Text>
             </TouchableOpacity>
+        </View>
+        <View style={styles.footer}>
+            {isCorrect && <Text style={styles.response}>Correct!</Text>}
+            {isWrong && <Text style={styles.response}>Incorrect!, try again!</Text>}
         </View>
     </SafeAreaView>
 
@@ -77,7 +86,8 @@ const styles = StyleSheet.create({
     question: {
         textAlign: 'left',
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginTop: 30,
+        marginBottom: 10,
         fontSize: 20,
     },
     title: {
@@ -97,13 +107,13 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     space: {
-        marginBottom: 10,
+        marginTop: 10,
     },
     img: {
         alignSelf: 'center', 
         width: 140, 
         height: 140,
-        marginBottom: 20,
+        marginBottom: 10,
     },
     labelimg: {
         width: 20, 
@@ -121,11 +131,21 @@ const styles = StyleSheet.create({
         top: 0
     },
     mascot: {
-        width: 30, 
-        height: 30, 
-        marginTop: 15, 
+        width: 100, 
+        height: 100, 
+        marginTop: 20, 
         position: "absolute", 
-        top: 0
-    }
+        top: 10,
+        right: 10,
+    },
+    response: {
+        color: '#000000', 
+        fontSize: 18
+    },
+    footer: {
+        position: "absolute",
+        bottom: 30,
+        alignSelf: "center"
+    },
   });
   
