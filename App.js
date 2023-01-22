@@ -25,7 +25,7 @@ export default function App() {
         <Stack.Screen
           name="LessonScreen"
           component={LessonScreen}
-          options={{title: 'Time to Learn!'}}
+          options={{title: 'Milestone 1'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -2,13 +2,14 @@ import React from 'react';
 import { ImageBackground, StyleSheet, SafeAreaView, View, Text, Button, Alert, Image, Label} from "react-native";
 
 export default function LessonScreen( {navigation} ) {
+    const localImage = require('../assets/lessonbackground.png');
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
         <ImageBackground 
-        styles = {styles.background}
-        source = {require("../assets/background.png")}
-        >
-        </ImageBackground>
+            source={localImage} 
+            resizeMode = {"cover"}
+            style={styles.image}>
+        
         <Button style={styles.labelimg} title=" " onPress={() => Alert.alert('Back')} />
         <Text style={styles.label}>
             Lessons
@@ -41,21 +42,19 @@ export default function LessonScreen( {navigation} ) {
                 onPress={() => Alert.alert('Incorrect :(')}
             />
         </View>
-    </SafeAreaView>
+        </ImageBackground>
+    </View>
 
     );
 }
 
 //React Native Style Sheet
 const styles = StyleSheet.create({
-    //key-value pairs inside the object
-    background: {
-        flex: 1 // Image background takes up the entire screen 
-    },
     container: {
       flex: 1,
       justifyContent: 'center',
-      marginHorizontal: 16,
+      backgroundColor: '#fff',
+    //   marginHorizontal: 16,
     },
     label: {
         position: 'absolute',
@@ -63,10 +62,11 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     question: {
-        textAlign: 'left',
+        textAlign: 'center',
         fontWeight: 'bold',
         marginBottom: 80,
         fontSize: 20,
+        marginHorizontal: 16,
     },
     title: {
       textAlign: 'center',
@@ -92,5 +92,11 @@ const styles = StyleSheet.create({
         top:0,
         background: require("../assets/background.png"),
     },
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
+    }
   });
   
