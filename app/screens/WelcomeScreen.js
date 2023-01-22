@@ -46,5 +46,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 584ae906daf8826a0561ac6982ad7bfd7ef9808b
 })
